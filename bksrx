@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+url=$(buku -p -f2 |\
+    fzf -m --layout reverse --info inline --border \
+    --preview "buku -p {1}" --preview-window up,5 \
+    | cut -f2)
+
+if [ -n "$url" ]; then
+    echo "$url" | xargs open -a firefox
+fi
+# function brsx() {
+    # Open fzf with 100% heigh and borders with buku output on it,
+    
+    # if pgrep firefox DO NOT sync
+    # otherwise sync browser database with
+    # boku -ai
+    # Search applies only to --nth column
+    # If text selected with <CR> cut the corresponding link
+    # and open it with Firefox browser
+    # open -a Firefox $(buku -p -f 40 | fzf --height 100% --border --nth 3 | cut -f1)
+# }
+
+
